@@ -6,7 +6,7 @@ before_script:
   - npm prune
   - npm install
 
-script: npm test --coverage
+script: npm cover
 
 deploy:
   provider: npm
