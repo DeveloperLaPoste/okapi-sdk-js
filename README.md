@@ -1,4 +1,4 @@
-[![NPM version](https://badge.fury.io/js/okapi-sdk.svg)](http://badge.fury.io/js/okapi-sdk)
+[![NPM version](https://badge.fury.io/js/laposte-okapi-sdk.svg)](http://badge.fury.io/js/laposte-okapi-sdk)
 [![Build Status](https://travis-ci.org/DeveloperLaPoste/okapi-sdk-js.png?branch=master)](https://travis-ci.org/DeveloperLaPoste/okapi-sdk-js)
 [![Coverage Status](https://coveralls.io/repos/DeveloperLaPoste/okapi-sdk-js/badge.svg)](https://coveralls.io/r/DeveloperLaPoste/okapi-sdk-js)
 [![npm](https://img.shields.io/npm/l/express.svg?style=flat-square)]()
@@ -29,13 +29,13 @@ Pour consommer des APIs de La Poste, vous devez au préalable :
 ## Installation
 
 ```
-$ npm i okapi-sdk --save
+$ npm i laposte-okapi-sdk --save
 ```
 
 ## Utilisation
 
 ```javascript
-  const okapiSdk = require('okapi-sdk');
+  const okapiSdk = require('laposte-okapi-sdk');
   const oka = okapiSdk({appKey: 'mySecretAppKey'});
   oka.api('superapi')
     .version(1)
@@ -57,13 +57,13 @@ $ npm i okapi-sdk --save
 - Version adaptée à la production :
 
     ```html
-    <script src="node_modules/okapi-sdk/client/okapi-sdk.min.js"></script>
+    <script src="node_modules/laposte-okapi-sdk/client/okapi-sdk.min.js"></script>
     ```
 
 - Version non minifiée pour les développements :
 
     ```html
-    <script src="node_modules/okapi-sdk/client/okapi-sdk.js"></script>
+    <script src="node_modules/laposte-okapi-sdk/client/okapi-sdk.js"></script>
     ```
 
 ### Directement
