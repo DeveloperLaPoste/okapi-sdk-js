@@ -4,7 +4,7 @@
   "description": "Okapi client SDK for nodejs and the browser",
   "main": "lib/okapi-sdk.js",
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "rimraf dist",
     "build": "browserify -d -r ./lib/okapi-sdk.js:okapi-sdk -o demo/okapi-sdk.js",
     "lint": "eslint .",
     "test": "mocha",
@@ -42,6 +42,7 @@
     "formidable": "1.0.17",
     "istanbul": "0.4.5",
     "mocha": "3.0.2",
-    "portfinder": "1.0.7"
+    "portfinder": "1.0.7",
+    "rimraf": "2.5.4"
   }
 }
