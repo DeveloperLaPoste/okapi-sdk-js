@@ -13,6 +13,9 @@
     "cover": "istanbul cover _mocha",
     "coveralls": "npm run cover -- -- -R spec && cat dist/coverage/lcov.info | coveralls && rimraf dist/coverage"
   },
+  "directories": {
+    "client": "client"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:DeveloperLaPoste/okapi-sdk-js.git"
