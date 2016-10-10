@@ -25,7 +25,7 @@ $ npm i okapi-sdk --save
 
 ## Utilisation
 
-```
+```javascript
   const okapiSdk = require('okapi-sdk');
   const oka = okapiSdk({appKey: 'mySecretAppKey'});
   oka.api('superapi')
@@ -45,7 +45,7 @@ $ npm i okapi-sdk --save
 
 Insérez le chargement du script dans votre page HTML :
 
-```
+```html
 <script src="node_modules/okapi-sdk/client/okapi-sdk.min.js"></script>
 ```
 
