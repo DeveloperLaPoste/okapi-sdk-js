@@ -4,8 +4,10 @@
   "description": "Okapi client SDK for nodejs and the browser",
   "main": "lib/okapi-sdk.js",
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "browserify -d -r lib/okapi-sdk.js:okapi-sdk -o demo/okapi-sdk.js",
+    "clean": "rimraf dist/*",
+    "prebuild": "npm run clean -s",
+    "build": "npm run build:scripts -s",
+    "build:scripts": "browserify -d -r ./lib/okapi-sdk.js:okapi-sdk -o demo/okapi-sdk.js",
     "lint": "eslint .",
     "test": "mocha",
     "cover": "istanbul cover _mocha",
