@@ -1,4 +1,4 @@
-[![NPM version](https://badge.fury.io/js/anystore.svg)](http://badge.fury.io/js/okapi-sdk)
+[![NPM version](https://badge.fury.io/js/okapi-sdk.svg)](http://badge.fury.io/js/okapi-sdk)
 [![Build Status](https://travis-ci.org/DeveloperLaPoste/okapi-sdk-js.png?branch=master)](https://travis-ci.org/DeveloperLaPoste/okapi-sdk-js)
 [![Coverage Status](https://coveralls.io/repos/DeveloperLaPoste/okapi-sdk-js/badge.svg)](https://coveralls.io/r/DeveloperLaPoste/okapi-sdk-js)
 [![npm](https://img.shields.io/npm/l/express.svg?style=flat-square)]()
