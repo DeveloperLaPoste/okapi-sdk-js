@@ -6,18 +6,18 @@
 
 ![Okapi](https://github.com/DeveloperLaPoste/okapi-sdk-js/raw/master/assets/img/okapi-logo-200.png)
 
-## Okapi client SDK for nodejs and the browsers
+## Le SDK client Okapi pour NodeJS et les navigateurs
 
-SDK to integrate Okapi APIs.
+Ce SDK facilite la consommation des APIs de La Poste.
 
-Okapi is the platform behind [La Poste Open API](https://developer.laposte.fr/) :
+Okapi est la plateforme derrière [les Open APIs de La Poste](https://developer.laposte.fr/) :
 
 ![Developer La Poste](https://github.com/DeveloperLaPoste/okapi-sdk-js/raw/master/assets/img/developer-laposte-fr-screenshot.png)
 
-To consume La Poste APIs you need first to :
-- [Sign up](https://developer.laposte.fr/inscription/)
-- Create an app and get your app key to use later with okapi sdk
-- Subscribe to any of the APIs
+Pour consommer des APIs de La Poste, vous devez au préalable :
+- [Créer votre compte](https://developer.laposte.fr/inscription/)
+- Créer une application et noter la clé générée, à utiliser comme appKey dans le SDK
+- Souscrire à une ou plusieurs APIs
 
 ## Installation
 
@@ -25,7 +25,7 @@ To consume La Poste APIs you need first to :
 $ npm i okapi-sdk --save
 ```
 
-## Usage
+## Utilisation
 
 ```
   const okapiSdk = require('okapi-sdk');
@@ -43,61 +43,61 @@ $ npm i okapi-sdk --save
     });
 ```
 
-## Methods
+## Méthodes
 
-Following methods are chaining : they return this (Object) for chaining usage.
+Les méthodes suivantes peuvent être chainées : elles retournent this (Object) pour permettre un chainage des appels.
 
 ### .api
 
-Set the name of the API to consume.
+Définit le contexte d'URL de l'API à consommer.
 
-Arguments : url context of the API (String)
+Arguments : contexte d'URL de l'API (String)
 
 ### .version
 
-Set the version of the API to consume.
+Définit la version de l'API à consommer.
 
 Arguments : version (Integer|String)
 
 ### .resource
 
-Set the resource of the API to consume.
+Définit l'URI de ressource de l'API à consommer.
 
-Arguments : resource_name (String)
+Arguments : URI de la ressource (String)
 
 ### .uri
 
-Set the uri to use.
+Définit une URI complète à utiliser (alternative à l'utilisation de .api et .version).
 
-Arguments : uri (String) (e.g. : '/APIname/APIversion/resource')
+Arguments : uri (String) (ex : '/APIname/APIversion/resource')
 
 ### .body
 
-Set the body.
+Définit le corps de la requête.
 
-Arguments : body (Object)
+Arguments : corps (Object)
 
 ### .query
 
-Set the query string.
+Définit les paramètres de query string.
 
 Arguments: query (Object)
 
 ### .params
 
-Set the params.
+Défnit les paramètres de l'URI.
 
 Arguments: params (Object)
 
 ### .attachment
 
-Upload a file.
+Définit un fichier à uploader.
 
 Arguments: attachment (Object)
 
 ### .build
 
-Helper method all in one.
+Méthode utilitaire tout-en-un qui construit l'URI.
 
 Arguments: opt (Object)
  
@@ -105,32 +105,31 @@ Exemple :
 
 ```{API name, API version, resource, [...]})```
 
-Following methods are not chaining :
+Les méthodes suivantes ne sont pas chainées :
 
 ### .toUrl
 
-Returns the url of the call.
+Retourne l'URL complète de la requête.
 
 Arguments: [opt] (Object)
 
-Example : 
+Exemple : 
 
 ```{API name, API version, resource, [...]}```
 
-Returns a full completed url (String)
+Retourne une URL complète (String)
 
 ### .get | .post | .put | .patch | .post | .delete
 
-They are the same than the HTTP method, it's this methods that make the request server.
+Ces méthodes sont identiques à leur équivalent HTTP, l'invocation de l'une de ces méthode déclenche l'appel de la requête au serveur.
 
 Arguments: [opt] (Object)
 
-Example : 
+Exemple : 
 
 ```{API name, API version, resource, [...]}```
 
-Returns a Promise that fullfills following args :
-- res : response (Object)
-- body : response body (Object)
+Retourne une promesse qui se réalise avec les arguments suivants :
+- res : réponse (Object)
+- body : corps de la réponse body (Object)
 
-Enjoy !
