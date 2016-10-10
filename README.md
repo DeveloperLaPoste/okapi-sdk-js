@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/l/express.svg?style=flat-square)]()
 
 
-![Okapi](/raw/master/assets/img/okapi-logo-200.png)
+![Okapi](https://github.com/DeveloperLaPoste/okapi-sdk-js/raw/master/assets/img/okapi-logo-200.png)
 
 ## Okapi client SDK for nodejs and the browsers
 
