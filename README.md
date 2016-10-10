@@ -3,10 +3,16 @@
 [![Coverage Status](https://coveralls.io/repos/DeveloperLaPoste/okapi-sdk-js/badge.svg)](https://coveralls.io/r/DeveloperLaPoste/okapi-sdk-js)
 [![npm](https://img.shields.io/npm/l/express.svg?style=flat-square)]()
 
-<div>
-<img style="display: inline-block" title="Okapi" src="https://github.com/DeveloperLaPoste/okapi-sdk-js/raw/master/assets/img/okapi-logo-200.png"> 
-<img style="display: inline-block" title="JavaScript" src="http://i.stack.imgur.com/Mmww2.png"> 
-<img style="display: inline-block" title="La Poste" src="https://logorigine.files.wordpress.com/2011/10/logo-la-poste.jpg" height="200"> 
+<div style="height: 200px">
+  <a href="https://developer.laposte.fr">
+    <img style="display: inline-block" title="Okapi" src="https://github.com/DeveloperLaPoste/okapi-sdk-js/raw/master/assets/img/okapi-logo-200.png">
+  </a>
+  <a href="https://fr.wikipedia.org/wiki/JavaScript">
+    <img style="display: inline-block" title="JavaScript" src="http://i.stack.imgur.com/Mmww2.png"> 
+  </a>
+  <a href="https://www.laposte.fr/">
+    <img style="display: inline-block" title="La Poste" src="https://logorigine.files.wordpress.com/2011/10/logo-la-poste.jpg" height="200"> 
+  </a>
 </div>
 
 ## Le SDK client Okapi pour JavaScript / nodejs / navigateurs
