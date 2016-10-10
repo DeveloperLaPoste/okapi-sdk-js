@@ -6,7 +6,7 @@
 <div>
 <img style="display: inline-block" title="Okapi" src="https://github.com/DeveloperLaPoste/okapi-sdk-js/raw/master/assets/img/okapi-logo-200.png"> 
 <img style="display: inline-block" title="JavaScript" src="http://i.stack.imgur.com/Mmww2.png"> 
-<img style="display: inline-block" title="La Poste" src="https://logorigine.files.wordpress.com/2011/10/logo-la-poste.jpg" height="250"> 
+<img style="display: inline-block" title="La Poste" src="https://logorigine.files.wordpress.com/2011/10/logo-la-poste.jpg" height="200"> 
 </div>
 
 ## Le SDK client Okapi pour JavaScript / nodejs / navigateurs
