@@ -15,8 +15,8 @@ Ce SDK facilite la consommation des [Open APIs de La Poste](https://developer.la
 Pour consommer des APIs de La Poste, vous devez au préalable :
 - [Créer votre compte](https://developer.laposte.fr/inscription/)
 - Créer une application et noter la clé d'app générée, à utiliser comme appKey dans le SDK
-- Souscrire à une ou plusieurs APIs
-
+- Souscrire à une API du [store](https://developer.laposte.fr/produit/)
+ 
 ## Installation
 
 ```
