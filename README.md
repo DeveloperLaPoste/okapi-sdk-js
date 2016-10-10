@@ -6,7 +6,9 @@
 
 ![Okapi](https://github.com/DeveloperLaPoste/okapi-sdk-js/raw/master/assets/img/okapi-logo-200.png)
 
-## Le SDK client Okapi pour NodeJS et les navigateurs
+![JavaScript](http://i.stack.imgur.com/Mmww2.png)
+
+## Le SDK client Okapi pour JavaScript (nodejs et navigateurs)
 
 Ce SDK facilite la consommation des [Open APIs de La Poste](https://developer.laposte.fr/), via la plateforme Okapi :
 
