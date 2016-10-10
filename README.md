@@ -43,17 +43,33 @@ $ npm i okapi-sdk --save
 
 ## Utilisation dans un navigateur
 
-Insérez le chargement du script dans votre page HTML :
+### Après installation via NPM :
 
-```html
-<script src="node_modules/okapi-sdk/client/okapi-sdk.min.js"></script>
-```
+- Version adaptée à la production :
 
-Ou utilisez la version non minifiée pour les développements :
+    ```html
+    <script src="node_modules/okapi-sdk/client/okapi-sdk.min.js"></script>
+    ```
 
-```html
-<script src="node_modules/okapi-sdk/client/okapi-sdk.js"></script>
-```
+- Version non minifiée pour les développements :
+
+    ```html
+    <script src="node_modules/okapi-sdk/client/okapi-sdk.js"></script>
+    ```
+
+### Directement :
+
+- Version adaptée à la production :
+
+    ```html
+    <script src="https://github.com/DeveloperLaPoste/okapi-sdk-js/raw/master/client/okapi-sdk.min.js"></script>
+    ```
+
+- Version non minifiée pour les développements :
+
+    ```html
+    <script src="https://github.com/DeveloperLaPoste/okapi-sdk-js/raw/master/client/okapi-sdk.js"></script>
+    ```
 
 ## Méthodes
 
