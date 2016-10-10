@@ -115,4 +115,12 @@ const apiServer = {
   }
 };
 
+if (!module.parent) {
+  apiServer.init()
+    .start()
+    .then(() => {
+      console.log(`Test api server listening to ${apiServer.baseUrl} with app key "${apiServer.appKey}"`);
+    });
+}
+
 module.exports = apiServer;

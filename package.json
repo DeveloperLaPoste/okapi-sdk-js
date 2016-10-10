@@ -11,11 +11,7 @@
     "lint": "eslint .",
     "test": "mocha",
     "cover": "istanbul cover _mocha",
-    "coveralls": "npm run cover -- -- -R spec && cat dist/coverage/lcov.info | coveralls && rimraf dist/coverage",
-    "testserver": "./bin/testserver"
-  },
-  "bin": {
-    "testserver": "./bin/testserver"
+    "coveralls": "npm run cover -- -- -R spec && cat dist/coverage/lcov.info | coveralls && rimraf dist/coverage"
   },
   "repository": {
     "type": "git",
