@@ -41,6 +41,20 @@ $ npm i okapi-sdk --save
     });
 ```
 
+## Utilisation dans un navigateur
+
+Insérez le chargement du script dans votre page HTML :
+
+```
+<script src="node_modules/okapi-sdk/client/okapi-sdk.min.js"></script>
+```
+
+Ou utilisez la version non minifiée pour les développements :
+
+```
+<script src="node_modules/okapi-sdk/client/okapi-sdk.js"></script>
+```
+
 ## Méthodes
 
 Les méthodes suivantes peuvent être chainées : elles retournent this (Object) pour permettre un chainage des appels.
