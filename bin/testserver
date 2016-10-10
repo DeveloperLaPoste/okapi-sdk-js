@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+const apiServer = require('../test/util/api-server');
+apiServer.init()
+  .start()
+  .then(() => {
+    console.log(`Test api server listening to ${apiServer.baseUrl} with app key "${apiServer.appKey}"`);
+  });

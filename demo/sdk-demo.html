@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="okapi-sdk.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<section id="requestContainer">
+  <h3>Request</h3>
+  <form id="apiForm">
+    <p>
+      <label>App key :
+        <input id="appKey" type="password" value="Hchl9IRQIeGObF+kw+s4nD4h+d6pJKqgGMwJtT7KFJs/sGa4p1ljEh8hU1zwNcaV">
+      </label>
+    </p>
+    <p>
+      <label>API :
+        <input id="api" type="text" value="suivi">
+      </label>
+    </p>
+    <p>
+      <label>version :
+        <input id="version" type="text" value="1">
+      </label>
+    </p>
+    <p>
+      <label>Ressource :
+        <input id="resource" type="text" value="1111111111111">
+      </label>
+    </p>
+    <input type="submit" value="GET">
+  </form>
+</section>
+<section id="responseContainer">
+  <h3>Réponse</h3>
+  <div id="spinner" class="large progress" style="display:none"></div>
+  <div id="responseContent" class="content">
+    <p>
+      <label>Status code :
+        <span id="statusCode"></span>
+      </label>
+    </p>
+    <p>
+      <textarea id="body" readonly cols="80" rows="30"></textarea>
+    </p>
+  </div>
+</section>
+<script>
+  const okapiSdk = require('okapi-sdk');
+  $(document).ready(function() {
+    $('#apiForm').submit(function() {
+      $('#spinner').show();
+      $('#responseContent').hide();
+      const oka = okapiSdk({appKey: document.getElementById('appKey').value});
+      oka.api($('#api').val())
+          .version($('#version').val())
+          .resource($('#resource').val())
+          .get()
+          .spread(function(data, res) {
+            $('#responseContent').show();
+            $('#spinner').hide();
+            $('#statusCode').text(res.statusCode);
+            $('#body').text(JSON.stringify(data, null, 2));
+          })
+          .catch(function(err) {
+            console.error(err);
+          });
+      return false;
+    });
+  });
+</script>
+</body>
+</html>
