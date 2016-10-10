@@ -1,7 +1,7 @@
 {
   "name": "okapi-sdk",
   "version": "0.0.1",
-  "description": "Okapi client SDK for nodejs and the browser",
+  "description": "Okapi client SDK for JavaScript (nodejs and browsers)",
   "main": "lib/okapi-sdk.js",
   "scripts": {
     "clean": "rimraf dist/*",
