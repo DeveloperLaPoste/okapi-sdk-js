@@ -4,12 +4,12 @@
   "description": "Okapi client SDK for nodejs and the browser",
   "main": "lib/okapi-sdk.js",
   "scripts": {
-    "clean": "rm -rf dist docs",
+    "clean": "rm -rf dist",
     "build": "browserify -d -r ./lib/okapi-sdk.js:okapi-sdk -o demo/okapi-sdk.js",
     "lint": "eslint .",
     "test": "mocha",
     "cover": "istanbul cover _mocha",
-    "coveralls": "npm run cover -- -R lcovonly && cat ./dist/coverage/lcov.info | coveralls && rm -rf ./dist/coverage",
+    "coveralls": "istanbul cover _mocha -- -R spec && cat ./dist/coverage/lcov.info | coveralls && rm -rf ./dist/coverage",
     "testserver": "./bin/testserver"
   },
   "bin": {
