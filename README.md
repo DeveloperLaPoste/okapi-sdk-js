@@ -10,6 +10,15 @@
 
 SDK to integrate Okapi APIs.
 
+Okapi is the platform behind [La Poste Open API](https://developer.laposte.fr/) :
+
+![Developer La Poste](https://github.com/DeveloperLaPoste/okapi-sdk-js/raw/master/assets/img/developer-laposte-fr-screenshot.png)
+
+To consume La Poste APIs you need first to :
+- [Sign up](https://developer.laposte.fr/inscription/)
+- Create an app and get your app key to use later with okapi sdk
+- Subscribe to any of the APIs
+
 ## Installation
 
 ```
