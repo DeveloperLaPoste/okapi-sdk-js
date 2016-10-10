@@ -1,6 +1,5 @@
 .idea/
 *.log
-demo/okapi-sdk.js
 dist/
 node_modules/
 tmp/
