@@ -3,7 +3,8 @@
 [![Coverage Status](https://coveralls.io/repos/DeveloperLaPoste/okapi-sdk-js/badge.svg)](https://coveralls.io/r/DeveloperLaPoste/okapi-sdk-js)
 [![npm](https://img.shields.io/npm/l/express.svg?style=flat-square)]()
 
-![Okapi](https://github.com/DeveloperLaPoste/okapi-sdk-js/raw/master/assets/img/okapi-logo-200.png | height=200)|![JavaScript](http://i.stack.imgur.com/Mmww2.png | height=200)|![La Poste](https://logorigine.files.wordpress.com/2011/10/logo-la-poste.jpg | height=200)
+![Okapi](https://github.com/DeveloperLaPoste/okapi-sdk-js/raw/master/assets/img/okapi-logo-200.png | height=200)|![JavaScript](http://i.stack.imgur.com/Mmww2.png | height=200)|![La Poste](https://logorigine.files.wordpress.com/2011/10/logo-la-poste.jpg | height=200)
+:--------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------:|:----------------------------------------------------------------------------------------:
 
 ## Le SDK client Okapi pour JavaScript / nodejs / navigateurs
 
