@@ -8,9 +8,7 @@
 
 ## Le SDK client Okapi pour NodeJS et les navigateurs
 
-Ce SDK facilite la consommation des APIs de La Poste.
-
-Okapi est la plateforme derrière [les Open APIs de La Poste](https://developer.laposte.fr/) :
+Ce SDK facilite la consommation des [Open APIs de La Poste](https://developer.laposte.fr/), via la plateforme Okapi :
 
 ![Developer La Poste](https://github.com/DeveloperLaPoste/okapi-sdk-js/raw/master/assets/img/developer-laposte-fr-screenshot.png)
 
