@@ -11,7 +11,7 @@
     <img style="display: inline-block" title="JavaScript" src="http://i.stack.imgur.com/Mmww2.png"> 
   </a>
   <a href="https://www.laposte.fr/">
-    <img style="display: inline-block" title="La Poste" src="https://logorigine.files.wordpress.com/2011/10/logo-la-poste.jpg" height="200"> 
+    <img style="display: inline-block" title="La Poste" src="https://logorigine.files.wordpress.com/2011/10/logo-la-poste.jpg"> 
   </a>
 </div>
 
