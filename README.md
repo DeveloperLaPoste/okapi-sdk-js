@@ -1,7 +1,10 @@
-[![build status](https://gitlab.laposte.io/openapi/okapi-sdk-js/badges/master/build.svg)](https://gitlab.laposte.io/openapi/okapi-sdk-js/commits/master)
-[![coverage report](https://gitlab.laposte.io/openapi/okapi-sdk-js/badges/master/coverage.svg)](https://gitlab.laposte.io/openapi/okapi-sdk-js/commits/master)
+[![NPM version](https://badge.fury.io/js/anystore.svg)](http://badge.fury.io/js/okapi-sdk)
+[![Build Status](https://travis-ci.org/DeveloperLaPoste/okapi-sdk-js.png?branch=master)](https://travis-ci.org/DeveloperLaPoste/okapi-sdk-js)
+[![Coverage Status](https://coveralls.io/repos/DeveloperLaPoste/okapi-sdk-js/badge.svg)](https://coveralls.io/r/DeveloperLaPoste/okapi-sdk-js)
+[![npm](https://img.shields.io/npm/l/express.svg?style=flat-square)]()
 
-![Okapi](https://gitlab.laposte.io/openapi/okapi-sdk-js/raw/master/assets/img/okapi-logo-200.png)
+
+![Okapi](assets/img/okapi-logo-200.png)
 
 ## Okapi client SDK for nodejs and the browsers
 
