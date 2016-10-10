@@ -51,7 +51,7 @@ Insérez le chargement du script dans votre page HTML :
 
 Ou utilisez la version non minifiée pour les développements :
 
-```
+```html
 <script src="node_modules/okapi-sdk/client/okapi-sdk.js"></script>
 ```
 
