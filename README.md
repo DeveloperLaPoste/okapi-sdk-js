@@ -43,7 +43,7 @@ $ npm i okapi-sdk --save
 
 ## Utilisation dans un navigateur
 
-### Après installation via NPM :
+### Après installation via NPM
 
 - Version adaptée à la production :
 
@@ -57,7 +57,7 @@ $ npm i okapi-sdk --save
     <script src="node_modules/okapi-sdk/client/okapi-sdk.js"></script>
     ```
 
-### Directement :
+### Directement
 
 - Version adaptée à la production :
 
@@ -71,7 +71,7 @@ $ npm i okapi-sdk --save
     <script src="https://github.com/DeveloperLaPoste/okapi-sdk-js/raw/master/client/okapi-sdk.js"></script>
     ```
 
-## Méthodes
+## Référence API
 
 Les méthodes suivantes peuvent être chainées : elles retournent this (Object) pour permettre un chainage des appels.
 
