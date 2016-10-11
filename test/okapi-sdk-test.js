@@ -10,10 +10,10 @@ const expect = chai.expect;
 describe('okapi client sdk', () => {
 
   const appKey = 'mySecretAppKey';
-  let okapiCli, apiServer;
+  let okapiSdk, apiServer;
 
   before(() => {
-    okapiCli = require('../lib/okapi-sdk');
+    okapiSdk = require('../lib/okapi-sdk');
     apiServer = require('./util/api-server');
     apiServer.init(appKey);
     return apiServer.start();
@@ -22,7 +22,7 @@ describe('okapi client sdk', () => {
   after(() => apiServer.stop());
 
   it('should get response from a simple api resource', () => {
-    const oka = okapiCli({baseUrl: apiServer.baseUrl, appKey});
+    const oka = okapiSdk({baseUrl: apiServer.baseUrl, appKey});
     return oka.api('myapi')
       .version(1)
       .resource('myresource')
@@ -34,7 +34,7 @@ describe('okapi client sdk', () => {
   });
 
   it('should get an error because of bad base url', () => {
-    const oka = okapiCli({baseUrl: 'http://127.0.0.1:9876'});
+    const oka = okapiSdk({baseUrl: 'http://127.0.0.1:9876'});
     return oka.api('myapi')
       .version(1)
       .resource('myresource')
@@ -48,7 +48,7 @@ describe('okapi client sdk', () => {
   });
 
   it('should get an error because of bad uri', () => {
-    const oka = okapiCli({baseUrl: apiServer.baseUrl, appKey});
+    const oka = okapiSdk({baseUrl: apiServer.baseUrl, appKey});
     return oka.api('baduri')
       .get()
       .then(result => {
@@ -64,7 +64,7 @@ describe('okapi client sdk', () => {
   });
 
   it('should get an error because of missing appKey', () => {
-    const oka = okapiCli({baseUrl: apiServer.baseUrl});
+    const oka = okapiSdk({baseUrl: apiServer.baseUrl});
     return oka.api('myapi')
       .version(1)
       .resource('myresource')
@@ -87,7 +87,7 @@ describe('okapi client sdk', () => {
     let oka, id;
 
     before(() => {
-      oka = okapiCli({baseUrl: apiServer.baseUrl, appKey});
+      oka = okapiSdk({baseUrl: apiServer.baseUrl, appKey});
     });
 
     it('should post a resource', () => oka
@@ -147,7 +147,7 @@ describe('okapi client sdk', () => {
   });
 
   it('should upload a file', () => {
-    const oka = okapiCli({baseUrl: apiServer.baseUrl, appKey});
+    const oka = okapiSdk({baseUrl: apiServer.baseUrl, appKey});
     return oka
       .api('myapi')
       .version(1)
@@ -162,7 +162,7 @@ describe('okapi client sdk', () => {
   });
 
   it('should use uri', () => {
-    const oka = okapiCli({baseUrl: apiServer.baseUrl, appKey});
+    const oka = okapiSdk({baseUrl: apiServer.baseUrl, appKey});
     return oka
       .uri('myapi/v1/myresource')
       .get()
@@ -174,7 +174,7 @@ describe('okapi client sdk', () => {
   });
 
   it('should build correctly', () => {
-    const oka = okapiCli({baseUrl: apiServer.baseUrl, appKey});
+    const oka = okapiSdk({baseUrl: apiServer.baseUrl, appKey});
     return oka
       .build({
         api: 'myapi',
@@ -190,7 +190,7 @@ describe('okapi client sdk', () => {
   });
 
   it('should return the url', () => {
-    const oka = okapiCli({baseUrl: apiServer.baseUrl, appKey});
+    const oka = okapiSdk({baseUrl: apiServer.baseUrl, appKey});
     expect(oka.toUrl({
       api: 'myapi',
       version: '1',
@@ -199,7 +199,7 @@ describe('okapi client sdk', () => {
   });
 
   it('should get correctly', () => {
-    const oka = okapiCli({baseUrl: apiServer.baseUrl, appKey});
+    const oka = okapiSdk({baseUrl: apiServer.baseUrl, appKey});
     return oka
       .get({
         api: 'myapi',

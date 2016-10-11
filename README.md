@@ -60,22 +60,28 @@ Tous les exemples suivants sont équivalents :
       oka.api('superapi').version(1).resource('contacts').get()
     ```
 
-- la dernière méthode (action) accepte une chaîne de caractère comme chemin de la ressource :
+- la méthode verbe accepte une chaîne de caractère comme chemin de la ressource :
 
     ```javascript
       oka.api('superapi').version(1).get('contacts')
     ```
 
-- la dernière méthode considère le paramètre comme l'URL complète s'il est du type String et qu'aucune API n'a été renseignée au préalable :
+- la méthode verbe considère le paramètre comme l'URL complète s'il est du type String et qu'aucune API n'a été renseignée au préalable :
 
     ```javascript
       oka.get('superapi/v1/contacts')
     ```
 
-- méthode builder :
+- construction directe via un objet :
 
     ```javascript
       oka.build({ api: 'superapi', version: 1, resource: 'contacts'}).get()
+    ```
+
+- encore plus direct via la méthode verbe :
+
+    ```javascript
+      oka.get({ api: 'superapi', version: 1, resource: 'contacts'})
     ```
 
 ## Utilisation dans un navigateur
