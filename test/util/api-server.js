@@ -28,7 +28,7 @@ const apiServer = {
       res.json({foo: req.query.foo || 'bar'});
     });
     this.contacts = [];
-    this.app.post('/myapi/v1/contact-forms', bodyParser.urlencoded(), (req, res) => {
+    this.app.post('/myapi/v1/contact-forms', bodyParser.urlencoded({extended: false}), (req, res) => {
       const data = Object.assign(_.pick(req.body, ['firstName', 'lastName']), {id: this.contacts.length + 1});
       this.contacts.push(data);
       res.status(201);
