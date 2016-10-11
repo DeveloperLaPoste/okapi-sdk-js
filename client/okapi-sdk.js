@@ -87327,6 +87327,7 @@ var pathToRegexp = require('path-to-regexp');
 var HttpError = require('./http-error');
 
 var okapiSdk = function okapiSdk(opt) {
+  opt = opt || {};
   var httpErrorHandler = function httpErrorHandler(res, body) {
     if (res.statusCode >= 400) {
       throw new HttpError({ statusCode: res.statusCode, body: body });
@@ -87344,41 +87345,10 @@ var okapiSdk = function okapiSdk(opt) {
   };
   var ctx = _.clone(defaultCtx);
   var resolve = function resolve() {
-    var reqOpt = Object.assign({
-      headers: {
-        'x-okapi-key': ctx.appKey
-      },
-      checkServerIdentity: function checkServerIdentity(host, cert) {
-        var altNames = void 0,
-            i = void 0,
-            item = void 0,
-            domain = void 0;
-        if (cert.subjectaltname) {
-          altNames = cert.subjectaltname.split(',');
-          altNames = altNames.map(function (item) {
-            var match = item.match('DNS:(.*)');
-            return match ? match[1] : null;
-          });
-        }
-        altNames = _.compact(altNames);
-        if (altNames && altNames.length) {
-          if (altNames.indexOf(host) !== -1) {
-            return;
-          }
-          for (i = 0; i < altNames.length; i++) {
-            item = altNames[i];
-            if (item.indexOf('*.') !== 0) {
-              break;
-            }
-            domain = item.substring(2);
-            if (host.indexOf(domain) === host.length - domain.length) {
-              return;
-            }
-          }
-        }
-        return 'Server certificate validation failed';
-      }
-    }, _.omit(ctx, ['appKey']));
+    var reqOpt = Object.assign({}, okapiSdk.requestDefaults, _.omit(ctx, ['appKey']));
+    if (ctx.appKey) {
+      _.set(reqOpt, "headers['x-okapi-key']", ctx.appKey);
+    }
     return requestAsync(reqOpt).spread(httpErrorHandler);
   };
   var promise = Promise.bind(ctx, Promise.resolve());
@@ -87493,8 +87463,14 @@ var okapiSdk = function okapiSdk(opt) {
   }, ['get', 'post', 'put', 'patch', 'post', 'delete'].reduce(function (o, name) {
     o[name] = function (opt) {
       ctx.method = name;
-      if (opt) {
+      if ((typeof opt === 'undefined' ? 'undefined' : _typeof(opt)) === 'object') {
         this.build(opt);
+      } else if (typeof opt === 'string') {
+        if (ctx.api) {
+          this.resource(opt);
+        } else {
+          this.uri(opt);
+        }
       }
       return resolve();
     };
@@ -87505,6 +87481,53 @@ var okapiSdk = function okapiSdk(opt) {
 
 okapiSdk.HttpError = HttpError;
 okapiSdk.defaultBaseUrl = 'https://api.laposte.fr' /*'http://localhost:3000'*/;
+okapiSdk.requestDefaults = {
+  checkServerIdentity: function checkServerIdentity(host, cert) {
+    // Accept wildcard certificates if domains match
+    if (cert && cert.subjectaltname) {
+      var altNames = _.compact(cert.subjectaltname.split(',').map(function (item) {
+        var match = item.match('DNS:(.*)');
+        return match ? match[1] : null;
+      }));
+      if (altNames && altNames.length) {
+        if (altNames.indexOf(host) !== -1) {
+          return;
+        }
+        var _iteratorNormalCompletion2 = true;
+        var _didIteratorError2 = false;
+        var _iteratorError2 = undefined;
+
+        try {
+          for (var _iterator2 = altNames[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+            var item = _step2.value;
+
+            if (item.indexOf('*.') === 0) {
+              var domain = item.substring(2);
+              var index = host.indexOf(domain);
+              if (index !== -1 && index === host.length - domain.length) {
+                return;
+              }
+            }
+          }
+        } catch (err) {
+          _didIteratorError2 = true;
+          _iteratorError2 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion2 && _iterator2.return) {
+              _iterator2.return();
+            }
+          } finally {
+            if (_didIteratorError2) {
+              throw _iteratorError2;
+            }
+          }
+        }
+      }
+    }
+    return 'Server certificate validation failed';
+  }
+};
 
 module.exports = okapiSdk;
 
