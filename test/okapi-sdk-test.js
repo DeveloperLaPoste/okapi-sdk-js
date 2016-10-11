@@ -235,7 +235,7 @@ describe('okapi client sdk', () => {
   });
 
   it('should use the query', () => {
-    const oka = okapiCli({baseUrl: apiServer.baseUrl, appKey});
+    const oka = okapiSdk({baseUrl: apiServer.baseUrl, appKey});
     return oka.api('myapi')
       .version(1)
       .resource('myresource')
@@ -248,7 +248,7 @@ describe('okapi client sdk', () => {
   });
 
   it('should use form', () => {
-    const oka = okapiCli({baseUrl: apiServer.baseUrl, appKey});
+    const oka = okapiSdk({baseUrl: apiServer.baseUrl, appKey});
     const body = {firstName: 'John', lastName: 'Doe'};
     return oka.api('myapi')
       .version(1)
