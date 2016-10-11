@@ -213,4 +213,34 @@ describe('okapi client sdk', () => {
       });
   });
 
+  it('should use the query', () => {
+    const oka = okapiCli({baseUrl: apiServer.baseUrl, appKey});
+    return oka.api('myapi')
+      .version(1)
+      .resource('myresource')
+      .query({foo: 'rab'})
+      .get()
+      .spread((data, res) => {
+        expect(res).to.have.property('statusCode', 200);
+        expect(data).to.eql({foo: 'rab'});
+      });
+  });
+
+  it('should use form', () => {
+    const oka = okapiCli({baseUrl: apiServer.baseUrl, appKey});
+    const body = {firstName: 'John', lastName: 'Doe'};
+    return oka.api('myapi')
+      .version(1)
+      .resource('contact-forms')
+      .form(body)
+      .post()
+      .spread((data, res) => {
+        data = JSON.parse(data);
+        expect(res).to.have.property('statusCode', 201);
+        expect(data).to.have.property('firstName', 'John');
+        expect(data).to.have.property('lastName', 'Doe');
+        expect(data).to.have.property('id', 1);
+      });
+  });
+
 });
