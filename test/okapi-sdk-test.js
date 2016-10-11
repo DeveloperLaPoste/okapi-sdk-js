@@ -81,6 +81,27 @@ describe('okapi client sdk', () => {
       });
   });
 
+  describe('requestDefaults', () => {
+
+    it('should accept wildcard certificate', () => {
+      expect(okapiSdk.requestDefaults).to.respondsTo('checkServerIdentity');
+      const domain = 'mysuperdomain.io';
+      expect(okapiSdk.requestDefaults.checkServerIdentity(domain, {
+        subjectaltname: `DNS:${domain},DNS:*.${domain}`
+      })).to.be.undefined;
+      expect(okapiSdk.requestDefaults.checkServerIdentity(domain, {
+        subjectaltname: `DNS:*.${domain}`
+      })).to.be.undefined;
+      expect(okapiSdk.requestDefaults.checkServerIdentity(domain, {
+        subjectaltname: 'DNS:anotherdomain.org'
+      })).to.equal('Server certificate validation failed');
+      expect(okapiSdk.requestDefaults.checkServerIdentity(domain, {
+        subjectaltname: 'DNS:anotherdomain.org,DNS:*.anotherdomain.org'
+      })).to.equal('Server certificate validation failed');
+    });
+
+  });
+
   describe('crud', () => {
 
     const body = {firstName: 'John', lastName: 'Doe'};
