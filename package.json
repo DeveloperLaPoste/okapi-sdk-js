@@ -1,0 +1,52 @@
+{
+  "name": "laposte-okapi-sdk",
+  "version": "0.0.2",
+  "description": "La Poste Open API client SDK for JavaScript / nodejs / browsers",
+  "main": "lib/okapi-sdk.js",
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "prebuild": "npm run clean -s",
+    "build": "npm run build:scripts -s",
+    "build:scripts": "mkdir -p client && browserify -r ./lib/okapi-sdk.js:okapi-sdk -t [ babelify --presets [ es2015 ] ] -o client/okapi-sdk.js && uglifyjs --compress -o client/okapi-sdk.min.js -- client/okapi-sdk.js",
+    "lint": "eslint .",
+    "test": "mocha",
+    "cover": "istanbul cover _mocha",
+    "coveralls": "npm run cover -- -- -R spec && cat dist/coverage/lcov.info | coveralls && rimraf dist/coverage"
+  },
+  "directories": {
+    "client": "client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:DeveloperLaPoste/okapi-sdk-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DeveloperLaPoste/okapi-sdk-js/issues"
+  },
+  "author": "Developer <developer@laposte.io> (https://developer.laposte.fr/)",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "lodash": "^4.15.0",
+    "path-to-regexp": "^1.5.3",
+    "request": "^2.74.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.16.0",
+    "babelify": "^7.3.0",
+    "body-parser": "^1.15.2",
+    "browserify": "^13.1.0",
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.14",
+    "eslint": "^3.5.0",
+    "eslint-config-nodejs": "^1.1.0",
+    "eslint-plugin-import": "^2.0.0 ",
+    "express": "^4.14.0",
+    "formidable": "^1.0.17",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2",
+    "portfinder": "^1.0.7",
+    "rimraf": "^2.5.4",
+    "uglify-js": "^2.7.3"
+  }
+}
