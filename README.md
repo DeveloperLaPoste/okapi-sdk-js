@@ -50,6 +50,34 @@ $ npm i laposte-okapi-sdk --save
     });
 ```
 
+La méthode verbe déclenche la requête avec la l'équivalent HTTP de get, post, put, patch ou delete.
+
+Tous les exemples suivants sont équivalents :
+
+- chainage :
+
+    ```javascript  
+      oka.api('superapi').version(1).resource('contacts').get()
+    ```
+
+- la dernière méthode (action) accepte une chaîne de caractère comme chemin de la ressource :
+
+    ```javascript
+      oka.api('superapi').version(1).get('contacts')
+    ```
+
+- la dernière méthode considère le paramètre comme l'URL complète s'il est du type String et qu'aucune API n'a été renseignée au préalable :
+
+    ```javascript
+      oka.get('superapi/v1/contacts')
+    ```
+
+- méthode builder :
+
+    ```javascript
+      oka.build({ api: 'superapi', version: 1, resource: 'contacts'}).get()
+    ```
+
 ## Utilisation dans un navigateur
 
 ### Après installation via NPM
