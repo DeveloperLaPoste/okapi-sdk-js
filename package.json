@@ -1,6 +1,6 @@
 {
   "name": "laposte-okapi-sdk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "La Poste Open API client SDK for JavaScript / nodejs / browsers",
   "main": "lib/okapi-sdk.js",
   "scripts": {
