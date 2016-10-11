@@ -25,9 +25,15 @@ const apiServer = {
       next();
     });
     this.app.get('/myapi/v1/myresource', (req, res) => {
-      res.json({foo: 'bar'});
+      res.json({foo: req.query.foo || 'bar'});
     });
     this.contacts = [];
+    this.app.post('/myapi/v1/contact-forms', bodyParser.urlencoded(), (req, res) => {
+      const data = Object.assign(_.pick(req.body, ['firstName', 'lastName']), {id: this.contacts.length + 1});
+      this.contacts.push(data);
+      res.status(201);
+      res.json(data);
+    });
     this.app.post('/myapi/v1/contacts', bodyParser.json(), (req, res) => {
       const data = Object.assign(_.pick(req.body, ['firstName', 'lastName']), {id: this.contacts.length + 1});
       this.contacts.push(data);
