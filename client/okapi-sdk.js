@@ -87339,6 +87339,7 @@ var okapiSdk = function okapiSdk(opt) {
     method: 'get',
     appKey: opt.appKey,
     json: true,
+    headers: {},
     rebuildUri: function rebuildUri() {
       ctx.uri = [ctx.api, 'v' + ctx.version].concat(ctx.resource && _.compact(ctx.resource.split('/'))).join('/');
     }
@@ -87433,7 +87434,7 @@ var okapiSdk = function okapiSdk(opt) {
             }
           }
         }
-      } else {
+      } else if (data) {
         Object.assign(ctx.headers, data);
       }
       return this;
